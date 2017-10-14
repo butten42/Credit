@@ -3,12 +3,40 @@
 <head>
     <title>我的查询</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <script type="text/javascript" src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
     <style type="text/css">
     #sidebar{
             background: aliceblue;
+    }
+    #unable{
+        background: red;
+    }
+    #already{
+        background: green;
+        display: none;
+    }
+    .bar{
+        color: white;
+        display: inline-block;
+        margin: 15px;
+        width: 60px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #baogao{
+        display: none;
+    }
+    #zhanghu{
+        display: none;
+    }
+    #tuijian{
+        display: none;
+    }
+    .div{
+        display: block;
     }
     </style>
 </head>
@@ -23,7 +51,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">个人征信查询平台</a>
+            <a class="navbar-brand" href="#">征信查询</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -39,15 +67,16 @@
       </nav>
       <div class="col-md-3" id="sidebar">
           <ul class="nav nav-sidebar">
-              <li><a href="#">我的验证</a></li>
-              <li><a href="#">我的报告</a></li>
-              <li><a href="#">我的账户</a></li>
+              <li id="item1"><a href="#">我的验证</a></li>
+              <li id="item2"><a href="#">我的报告</a></li>
+              <li id="item3"><a href="#">我的账户</a></li>
+              <li id="item4"><a href="#">我的推荐</a></li>
           </ul>
       </div>
       <div class="col-md-9">
           <div id="yanzheng">
               <h3>我的验证</h3>
-              <p>我的状态</p>
+              <span>我的状态:</span><span id="unable" class="bar">未验证</span><span id="already" class="bar">已验证</span>
               <div>
                   <table>
                       <thead>
@@ -71,18 +100,95 @@
           </div>
           <div id="baogao">
               <h3>我的报告</h3>
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th>报告时间</th>
+                          <th>类型</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>2017-10-14</td>
+                        <td><a href="table.html">交通银行普通信用卡</a></td>
+                    </tr>
+                  </tbody>
+              </table>
+
           </div>
           <div id="zhanghu">
               <h3>我的账户</h3>
+              <p>设置密码</p>
+              <form>
+              <label for="">旧密码：</label>
+              <input type="password" class="div">
+              <label for="">新密码：</label>
+              <input type="password" class="div">
+              <label>验证码：</label>
+              <input type="text" class="div">
+              <button class="btn btn-info">获取验证码</button>
+              <button class="btn btn-success">提交</button>
+              </form>
           </div>
+          <div id="tuijian">
+                  <h3>给您推荐的网贷产品</h3>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <img src="http://placehold.it/200x200/000/fff">
+                          <a href="#">testing</a>
+                          <p>discription........</p>
+                      </div>
+                      <div class="col-md-3">
+                          <img src="http://placehold.it/200x200/000/fff">
+                          <a href="#">testing</a>
+                          <p>discription........</p>
+                      </div>
+                      <div class="col-md-3">
+                          <img src="http://placehold.it/200x200/000/fff">
+                          <a href="#">testing</a>
+                          <p>discription........</p>
+                      </div>
+                      <div class="col-md-3">
+                          <img src="http://placehold.it/200x200/000/fff">
+                          <a href="#">testing</a>
+                          <p>discription........</p>
+                      </div>
+                  </div>
+              </div>
       </div>
     </div>
     <script type="text/javascript">
         $('#wenti').click(function(){
-            alert('安全等级较低已经停用')
+            alert('安全等级较低已经停用,请使用较高等级的安全验证方式')
         })
         $('#yhk').click(function(){
-            alert('ok')
+            alert('已验证')
+            $("#unable").hide()
+            $("#already").show()
+        })
+        $("#item1").click(function(){
+            $('#yanzheng').show();
+            $("#baogao").hide();
+            $("#zhanghu").hide();
+            $("#tuijian").hide()
+        });
+        $("#item2").click(function(){
+            $('#yanzheng').hide();
+            $("#baogao").show();
+            $("#zhanghu").hide();
+            $("#tuijian").hide()
+        })
+        $("#item3").click(function(){
+            $('#yanzheng').hide();
+            $("#baogao").hide();
+            $("#zhanghu").show();
+            $("#tuijian").hide()
+        })
+        $("#item4").click(function(){
+            $('#yanzheng').hide();
+            $("#baogao").hide();
+            $("#zhanghu").hide();
+            $("#tuijian").show();
         })
     </script>
 </body>

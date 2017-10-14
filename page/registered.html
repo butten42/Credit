@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <style type="text/css">
+        a{
+      text-decoration: none;
+      color: black;
+    }
+    h3{
+          border-bottom: 2px #c11000 solid;
+    }
+    form{
+          max-width: 340px;
+    margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <span>当前位置：</span>
+        <a href="../index.html">首页</a>
+        <span>></span>
+        <span>注册</span>
+      </div>
+      <div class="row">
+          <div>
+              <h3>用户注册</h3>
+              <form class="form-signin">
+                  <label for="name">姓名：</label>
+                  <input type="text" id="name" class="form-control">
+                  <label for="lisence">证件类型：</label>
+                  <select class="form-control">
+                      <option>身份证</option>
+                      <option>户口簿</option>
+                      <option>护照</option>
+                    </select>
+                  <label for="lsNumber">证件号码：</label>
+                  <input type="text" id="lsNumber" class="form-control">
+                  <label for="code">验证码：</label>
+                  <input type="text" id="code" class="form-control">
+                  <div><img src="yanzheng.png"><a href="#">看不清？换一张</a></div>
+                  <input type="checkbox" value="agree">
+                  <span>我已阅读并同意《</span>
+                  <a href="https://ipcrs.pbccrc.org.cn/html/servearticle.html">服务协议</a>》
+                  <input class="btn btn-danger btn-block" type="submit" >
+              </form>
+          </div>
+      </div>
+  </div>
+</body>

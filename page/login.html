@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <style type="text/css">
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    h3{
+          border-bottom: 2px #c11000 solid;
+    }
+    .lost{
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+    }
+    form{
+          max-width: 340px;
+    margin: 0 auto;
+    }
+    #registered{
+      display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <span>当前位置：</span>
+        <a href="../index.html">首页</a>
+        <span>></span>
+        <span>用户登录</span>
+      </div>
+      <div class="row">
+        <div>
+          <h3>用户登录</h3>
+
+          <form class="form-signin">
+
+        <label for="inputEmail">用户：</label>
+        <input id="inputEmail" class="form-control" placeholder="Name/Email address" required autofocus>
+        <p><a href="#" class="lost">忘记用户名？</a></p>
+        <span id="checkUser"></span>
+        <label for="inputPassword">密码：</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <p><a href="#" class="lost">忘记密码？</a></p>
+        <span id="checkPass"></span>
+        <label for="yanzheng">验证码：</label>
+        <input type="text" id="yazheng" class="form-control" placeholder="Password" required>
+        <img src="yanzheng.png"><a href="#">看不清？换一张</a>
+        <button class="btn btn-danger btn-block" type="submit">登录</button>
+        <button class="btn btn-primary btn-block" id="letsgo">还不是我们的用户？</button>
+      </form>
+        </div>
+        <div id="registered">
+          <h3>新用户注册</h3>
+          <div>
+            <a href="registered.html" class="btn btn-danger">新用户注册</a>
+          </div>
+          <div><h4>注册流程:</h4>
+            <p>填写身份信息 > 补充用户信息 > 完成注册</p></div>
+
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('#letsgo').click(function(){
+        $('#registered').toggle();
+      });
+    </script>
+</body>
+</html>

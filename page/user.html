@@ -3,9 +3,14 @@
 <head>
     <title>我的查询</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src="js/jquery/2.0.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <style type="text/css">
+    #sidebar{
+            background: aliceblue;
+    }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -32,7 +37,7 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      <div class="col-md-3">
+      <div class="col-md-3" id="sidebar">
           <ul class="nav nav-sidebar">
               <li><a href="#">我的验证</a></li>
               <li><a href="#">我的报告</a></li>
@@ -40,12 +45,45 @@
           </ul>
       </div>
       <div class="col-md-9">
-          <div id="yanzheng"></div>
-          <div id="baogao"></div>
-          <div id="zhanghu"></div>
+          <div id="yanzheng">
+              <h3>我的验证</h3>
+              <p>我的状态</p>
+              <div>
+                  <table>
+                      <thead>
+                        <tr>
+                            <th>安全等级变更</th>
+                            <th>身份验证方式</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>低等级=》中等级</td>
+                              <td id="wenti"><a href="#"> 问题验证</a></td>
+                          </tr>
+                          <tr>
+                              <td>中等级=》高等级</td>
+                              <td id="yhk"><a href="#">银行卡验证</a></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <div id="baogao">
+              <h3>我的报告</h3>
+          </div>
+          <div id="zhanghu">
+              <h3>我的账户</h3>
+          </div>
       </div>
-
-
     </div>
+    <script type="text/javascript">
+        $('#wenti').click(function(){
+            alert('安全等级较低已经停用')
+        })
+        $('#yhk').click(function(){
+            alert('ok')
+        })
+    </script>
 </body>
 </html>
